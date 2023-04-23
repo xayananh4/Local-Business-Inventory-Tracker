@@ -14,8 +14,7 @@ function CoffeeList(props) {
           roast={coffee.roast}
           poundsLeft={coffee.poundsLeft}
           key={coffee.id}
-          onSellPound={ () => {
-            props.onSellPound(coffee.id);
+          onSellPound={ () => { props.onSellPound(coffee.id);
           }}
 
         />
