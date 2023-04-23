@@ -40,12 +40,13 @@ class CoffeeClassControl extends React.Component {
   }
 
   handleSellingPound(id) {
-   
-    const coffee = this.state.mainCoffeeList.find(function (coffee) {
-      return coffee.id === id;
+    let coffee;
+    this.state.mainCoffeeList.forEach(function (element) {
+      if (element.id === id) {
+        coffee = element;
+      }
     });
 
-  
     if (coffee && coffee.poundsLeft > 0) {
       // Decrement the number of pounds left
       coffee.poundsLeft--;

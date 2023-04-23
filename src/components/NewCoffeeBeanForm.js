@@ -11,6 +11,7 @@ function NewCoffeeBeanForm(props) {
     origin: event.target.origin.value,
     price: event.target.price.value,
     roast: event.target.roast.value,
+    poundsLeft: 130,
     id: v4()
     });
   }
@@ -39,7 +40,7 @@ function NewCoffeeBeanForm(props) {
           name='roast'
           placeholder='Roast' />
 
-        <button type='submit'>Add coffeeBrand</button>
+        <button type='submit'>Add coffee Brand</button>
       </form>
     </React.Fragment>
   );
