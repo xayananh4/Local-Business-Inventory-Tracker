@@ -9,7 +9,7 @@ function CoffeeClass(props) {
       <p>Price: ${props.price}</p>
       <p>Roast: {props.roast}</p>
       <p>Pounds left: {props.poundsLeft}</p>
-       <button onClick={props.onSellPound}>Sell 1 Pound Of Coffee</button>
+      <button onClick={props.onSellPound}>Sell 1 Pound Of Coffee</button>
     </div>
   );
 }

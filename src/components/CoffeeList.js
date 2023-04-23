@@ -6,7 +6,7 @@ function CoffeeList(props) {
   return (
     <React.Fragment>
       <hr />
-      {props.mainCoffeeList.map((coffee, index) =>
+      {props.mainCoffeeList.map((coffee) =>
         <CoffeeClass
           name={coffee.name}
           origin={coffee.origin}
@@ -15,7 +15,8 @@ function CoffeeList(props) {
           poundsLeft={coffee.poundsLeft}
           key={coffee.id}
           
-          onSellPound={ () => { props.onSellPound(coffee.id);
+          onSellPound = { () => { 
+            props.onSellPound(coffee.id);
           }}
 
         />

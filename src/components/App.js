@@ -1,5 +1,4 @@
 import React from "react";
-import CoffeeList from "./CoffeeList";
 import CoffeeClassControl from "./CoffeeClassControl";
 
 function App(){
