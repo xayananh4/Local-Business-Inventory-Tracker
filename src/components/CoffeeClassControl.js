@@ -29,6 +29,8 @@ class CoffeeClassControl extends React.Component {
     }));
   }
 
+  
+
 
   handleAddingNewCoffeeToList = (newCoffee) => {
     const newMainCoffeeList = this.state.mainCoffeeList.concat(newCoffee);
