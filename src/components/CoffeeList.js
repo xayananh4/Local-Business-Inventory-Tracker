@@ -29,3 +29,5 @@ CoffeeList.propTypes = {
  
 
 };
+
+export default CoffeeList;
