@@ -76,7 +76,7 @@ class CoffeeClassControl extends React.Component {
       );
 
 
-      buttonText = "Add To Coffee List";
+      buttonText = "Add a new burlap sack of coffee";
 
     }
     return (
