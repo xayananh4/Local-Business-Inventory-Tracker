@@ -1,24 +1,27 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-function Coffee(props) {
+function CoffeeClass(props) {
   return (
-    <React.Fragment>
-      {/* <div onClick = {() => props.whenCoffeeClicked(props.id)}> */}
-      
-      {/* <h3>{props.location} - {props.names}</h3>
-      <p><em>{props.issue}</em></p> */}
-    
-        {/* </div> */}
-    </React.Fragment>
+    <div>
+      <h2>{props.name}</h2>
+      <p>Origin: {props.origin}</p>
+      <p>Price: ${props.price}</p>
+      <p>Roast: {props.roast}</p>
+      <p>Pounds left: {props.poundsLeft}</p>
+      <button onClick={props.onSellPound}>Sell 1 pound</button>
+      <hr />
+    </div>
   );
 }
 
-Coffee.propTypes = {
-  names: PropTypes.string,
-  location: PropTypes.string,
-  issue: PropTypes.string
+CoffeeClass.propTypes = {
+  name: PropTypes.string.isRequired,
+  origin: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  roast: PropTypes.string.isRequired,
+  poundsLeft: PropTypes.number.isRequired,
+  onSellPound: PropTypes.func.isRequired,
 };
 
-export default Coffee;
-
+export default CoffeeClass;
