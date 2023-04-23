@@ -13,7 +13,12 @@ function CoffeeList(props) {
           price={coffee.price}
           roast={coffee.roast}
           poundsLeft={coffee.poundsLeft}
-          key={coffee.id} />
+          key={coffee.id}
+          onSellPound={ () => {
+            props.onSellPound(coffee.id);
+          }}
+
+        />
       )}
     </React.Fragment>
   );
