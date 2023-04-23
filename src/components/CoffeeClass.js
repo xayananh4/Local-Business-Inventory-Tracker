@@ -9,8 +9,8 @@ function CoffeeClass(props) {
       <p>Price: ${props.price}</p>
       <p>Roast: {props.roast}</p>
       <p>Pounds left: {props.poundsLeft}</p>
-      <button onClick={props.onSellPound}>Sell 1 pound</button>
-      <hr />
+
+  
     </div>
   );
 }
@@ -21,7 +21,7 @@ CoffeeClass.propTypes = {
   price: PropTypes.number.isRequired,
   roast: PropTypes.string.isRequired,
   poundsLeft: PropTypes.number.isRequired,
-  onSellPound: PropTypes.func.isRequired,
+  onSellPound: PropTypes.func.isRequired
 };
 
 export default CoffeeClass;

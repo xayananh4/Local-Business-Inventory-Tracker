@@ -15,15 +15,6 @@ function NewCoffeeBeanForm(props) {
     });
   }
 
-  // function handleNewTicketFormSubmission(event) {
-  //   event.preventDefault();
-  //   props.onNewTicketCreation({
-  //     names: event.target.names.value,
-  //     location: event.target.location.value,
-  //     issue: event.target.issue.value,
-  //     id: v4()
-  //   });
-  // }
 
   return (
     <React.Fragment>
@@ -47,10 +38,6 @@ function NewCoffeeBeanForm(props) {
           type='text'
           name='roast'
           placeholder='Roast' />
-
-        <textarea
-          name='coffeeBrand'
-          placeholder='Tell you to add coffeeBrand' />
 
         <button type='submit'>Add coffeeBrand</button>
       </form>

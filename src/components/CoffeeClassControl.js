@@ -31,7 +31,6 @@ class CoffeeClassControl extends React.Component {
     let buttonText = null;
     if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewCoffeeBeanForm onNewCoffeeFormCreation={this.handleAddingNewCoffeeToList} /> 
-      // currentlyVisibleState = <NewCoffeeBeanForm />
       buttonText = "Return to Coffeee List";
     }
     else {
@@ -42,7 +41,9 @@ class CoffeeClassControl extends React.Component {
     return (
       <React.Fragment>
         {currentlyVisibleState}
+        
         <button onClick={this.handleClick}>{buttonText}</button> { /* new code */}
+      
       </React.Fragment>
     );
   }
