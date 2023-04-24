@@ -1,5 +1,6 @@
 import React from 'react';
 import CoffeeList from './CoffeeList';
+import CoffeeDetail from './CoffeeDetail';
 import NewCoffeeBeanForm from './NewCoffeeBeanForm';
 
 class CoffeeClassControl extends React.Component {
@@ -18,17 +19,32 @@ class CoffeeClassControl extends React.Component {
           id: 1
         }
       ],
-      formVisibleOnPage: false
+      formVisibleOnPage: false,
+      selectedCoffee: null // new code
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleSellingPound = this.handleSellingPound.bind(this);
   }
 
+
   handleClick() {
-    this.setState((prevState) => ({
-      //either set the formVisibleOnPage to: true/false
-      formVisibleOnPage: !prevState.formVisibleOnPage
-    }));
+    if (this.state.selectedCoffee != null) {
+      this.setState({
+        formVisibleOnPage: false,
+        selectedCoffee: null
+      });
+    }
+    else {
+      this.setState((prevState) => ({
+        //either set the formVisibleOnPage to: true/false
+        formVisibleOnPage: !prevState.formVisibleOnPage
+      }));
+    }
+  }
+
+  handleChangingSelectedCoffee = (id) => {
+    const selectedCoffee = this.state.mainCoffeeList.filter(coffee => coffee.id === id)[0];
+    this.setState({ selectedCoffee: selectedCoffee });
   }
 
   handleAddingNewCoffeeToList = (newCoffee) => {
@@ -61,24 +77,32 @@ class CoffeeClassControl extends React.Component {
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
-    if (this.state.formVisibleOnPage) {
+
+    if (this.state.selectedCoffee != null) {
+      currentlyVisibleState = <CoffeeDetail coffee={this.state.selectedCoffee} />
+      buttonText = "Return to Coffee List";
+
+    }
+
+
+    else if (this.state.formVisibleOnPage) {
 
       currentlyVisibleState = <NewCoffeeBeanForm onNewCoffeeFormCreation={this.handleAddingNewCoffeeToList} />
       buttonText = "Return to Coffee List";
 
     }
+
     else {
       currentlyVisibleState = (
         <CoffeeList
           mainCoffeeList={this.state.mainCoffeeList}
+          onCoffeeSelection={this.handleChangingSelectedCoffee}
           onSellPound={this.handleSellingPound}
         />
       );
-
-
       buttonText = "Add a new burlap sack of coffee";
-
     }
+
     return (
       <React.Fragment>
         {currentlyVisibleState}
