@@ -3,14 +3,15 @@ import PropTypes from 'prop-types';
 
 function CoffeeClass(props) {
   return (
-    <div onClick={() => props.whenCoffeeClicked(props.id)}>
-      <h2>{props.name}</h2>
-      {/* <p>Origin: {props.origin}</p>
-      <p>Price: ${props.price}</p>
-      <p>Roast: {props.roast}</p>
-      <p>Pounds left: {props.poundsLeft}</p>
-      <button onClick={props.onSellPound}>Sell 1 Pound Of Coffee</button> */}
-    </div>
+    <section>
+      <div onClick={() => props.whenCoffeeClicked(props.id)}>
+        <h2>{props.name}</h2>
+      </div>
+      <div>
+        <p>Pounds left: {props.poundsLeft}</p>
+        <button onClick={props.onSellPound}>Sell 1 Pound of {props.name} Coffee</button>
+      </div>
+    </section>
   );
 }
 
@@ -21,7 +22,6 @@ CoffeeClass.propTypes = {
   roast: PropTypes.string.isRequired,
   poundsLeft: PropTypes.number.isRequired,
   onSellPound: PropTypes.func.isRequired,
-
   id: PropTypes.string, // new PropType
   whenTicketClicked: PropTypes.func // new PropType
 };

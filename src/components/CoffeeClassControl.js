@@ -79,7 +79,9 @@ class CoffeeClassControl extends React.Component {
     let buttonText = null;
 
     if (this.state.selectedCoffee != null) {
-      currentlyVisibleState = <CoffeeDetail coffee={this.state.selectedCoffee} />
+      currentlyVisibleState = <CoffeeDetail coffee={this.state.selectedCoffee}
+
+      />
       buttonText = "Return to Coffee List";
 
     }
@@ -96,8 +98,8 @@ class CoffeeClassControl extends React.Component {
       currentlyVisibleState = (
         <CoffeeList
           mainCoffeeList={this.state.mainCoffeeList}
-          onCoffeeSelection={this.handleChangingSelectedCoffee}
           onSellPound={this.handleSellingPound}
+          onCoffeeSelection={this.handleChangingSelectedCoffee}
         />
       );
       buttonText = "Add a new burlap sack of coffee";
