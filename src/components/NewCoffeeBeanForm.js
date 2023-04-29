@@ -9,7 +9,7 @@ function NewCoffeeBeanForm(props) {
     props.onNewCoffeeFormCreation({
     name: event.target.name.value,
     origin: event.target.origin.value,
-    price: event.target.price.value,
+    price: parseInt(event.target.price.value),
     roast: event.target.roast.value,
     poundsLeft: 130,
     id: v4()
